@@ -1,0 +1,38 @@
+<template >
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col">
+        <!--Get account from a list, then choose contact from a picklist/combobox-->
+        <lightning-card title="Account list">
+            <ul>
+                <template if:true={responseRecibed}>
+                    <template for:each={accounts.data} for:item="account">
+                        <li key={account.Id} >
+                            <div class="slds-p-around_medium">
+                                <lightning-tile label={account.Name}>
+                                    <lightning-button label="Show Contacts" value={account.Id} onclick={showContacts}></lightning-button>
+                                </lightning-tile>                            
+                            </div>  
+                        </li>
+                    </template>
+                </template>
+            </ul> 
+        </lightning-card>
+        </div>
+        <div class="slds-col">
+            <lightning-card title="Contact list">
+                <template if:true={responseRecibedCont} >
+                    <lightning-combobox  name="status"
+                        label="Status"
+                        placeholder="Choose a Contact"
+                        options={arrayTest}
+                        onchange={showSomething}>
+                                                            
+                    </lightning-combobox>
+                </template>
+            </lightning-card>
+        </div>
+    </div>
+    
+    
+
+</template>

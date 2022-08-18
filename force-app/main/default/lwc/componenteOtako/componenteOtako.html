@@ -1,0 +1,17 @@
+<template >
+    
+    <lightning-button  onclick={filmNames} label="Click me" hidden={buttonHidden}></lightning-button>
+    <lightning-layout title="Film List" multiple-rows="true">
+        <template if:true={filmsRecibed}>
+            <template for:each={filmsList} for:item="film">
+                <lightning-layout-item key={film.id} size="4" onclick={showFilm}>                 
+                        <lightning-card title={film.title} variant="narrow" 
+                        icon-name="custom:custom99">
+                            <img src={film.image} name={film.title}/>             
+                        </lightning-card>                  
+                </lightning-layout-item>               
+            </template>
+        </template>
+    </lightning-layout>
+   
+</template>

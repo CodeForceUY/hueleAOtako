@@ -1,0 +1,6 @@
+img:hover{
+    border: 4px;
+    border-style: solid;
+    border-color: black;
+    transition: 0.5;
+}
